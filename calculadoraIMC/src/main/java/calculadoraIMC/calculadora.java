@@ -32,11 +32,11 @@ public class calculadora extends HttpServlet {
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 		 response.setContentType("text/html");
 	        PrintWriter out = response.getWriter();
-	        out.println("<html><head><title>Calculadora de IMC</title></head>");
+	        out.println("<html><head><title>Registro de productos</title></head>");
 	        out.println("<center><body><h1>Calculadora de IMC</h1></center>");
 	        out.println("<form method=\"post\">");
-	        out.println("<center>Nombre: <input type=\"text\" name=\"nombre\"><br></center>");
-	        out.println("<center>Altura (metros): <input type=\"text\" name=\"altura\"><br></center>");
+	        out.println("<center>Clave del producto: <input type=\"text\" name=\"nombre\"><br></center>");
+	        out.println("<center>Nombre del producto (metros): <input type=\"text\" name=\"altura\"><br></center>");
 	        out.println("<center>Peso (kilogramos): <input type=\"text\" name=\"peso\"><br></center>");
 	        out.println("<center><input type=\"submit\" value=\"Calcular IMC\"></center>");
 	        out.println("</form>");
