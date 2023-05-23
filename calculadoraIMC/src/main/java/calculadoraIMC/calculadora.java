@@ -33,7 +33,7 @@ public class calculadora extends HttpServlet {
 		 response.setContentType("text/html");
 	        PrintWriter out = response.getWriter();
 	        out.println("<html><head><title>Calculadora de IMC</title></head>");
-	        out.println("<center><body><h1>Calculadora de IMC</h1></center>");
+	        out.println("<center><body><h1>Calculadora de IMCCCCC</h1></center>");
 	        out.println("<form method=\"post\">");
 	        out.println("<center>Nombre: <input type=\"text\" name=\"nombre\"><br></center>");
 	        out.println("<center>Altura (metros): <input type=\"text\" name=\"altura\"><br></center>");
