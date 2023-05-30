@@ -10,16 +10,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class calculadora
+ * Servlet implementation class productos
  */
-@WebServlet("/calculadora")
-public class calculadora extends HttpServlet {
+@WebServlet("/Registro de productos")
+public class productos extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public calculadora() {
+    public productos() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -33,12 +33,16 @@ public class calculadora extends HttpServlet {
 		 response.setContentType("text/html");
 	        PrintWriter out = response.getWriter();
 	        out.println("<html><head><title>Registro de productos</title></head>");
-	        out.println("<center><body><h1>Calculadora de IMC</h1></center>");
+	        out.println("<center><body><h1>Registro de productos</h1></center>");
 	        out.println("<form method=\"post\">");
-	        out.println("<center>Clave del producto: <input type=\"text\" name=\"nombre\"><br></center>");
-	        out.println("<center>Nombre del producto (metros): <input type=\"text\" name=\"altura\"><br></center>");
+	        out.println("<center>Clave del producto: <input type=\"text\" name=\"clave\"><br></center>");
+	        out.println("<center>Nombre del producto (metros): <input type=\"text\" name=\"nombre\"><br></center>");
 	        out.println("<center>Peso (kilogramos): <input type=\"text\" name=\"peso\"><br></center>");
-	        out.println("<center><input type=\"submit\" value=\"Calcular IMC\"></center>");
+	        out.println("<center>Altura (kilogramos): <input type=\"text\" name=\"altura\"><br></center>");
+	        out.println("<center>Cantidad de productos: <input type=\"text\" name=\"cantidad\"><br></center>");
+	        out.println("<center>Precio: <input type=\"text\" name=\"precio\"><br></center>");
+	        out.println("<center>Estatus: <input type=\"text\" name=\"estatus\"><br></center>");
+	        out.println("<center><input type=\"submit\" value=\"Registrar\"></center>");
 	        out.println("</form>");
 	        out.println("</body></html>");
 
@@ -49,31 +53,21 @@ public class calculadora extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
-		String nombre = request.getParameter("nombre");
-		double altura = Double.parseDouble(request.getParameter("altura"));
-		double peso = Double.parseDouble(request.getParameter("peso"));
-        double imc = peso / (altura * altura);
+		String Nombre = request.getParameter("nombre");
+		double Peso = Double.parseDouble(request.getParameter("peso"));
+		double Altura = Double.parseDouble(request.getParameter("altura"));
+		double cantidad = Double.parseDouble(request.getParameter("cantidad"));
+		int cantidadInt = (int) Math.round(cantidad);
+		double Precio = Double.parseDouble(request.getParameter("precio"));
+		String Estatus = request.getParameter("estatus");
+		
+       
 
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
-        out.println("<html><head><title>Resultado del IMC</title></head>");
-        out.println("<body><h1>Resultado del IMC</h1>");
-        out.println("<p>De acuerdo con lo establecido " + nombre + ", tu IMC es: " + imc + "</p>");
-        if(imc<18.5) {
-        	out.println("<p>Tu peso es muy bajo </p>");	
-        }
-        else if(imc>18.5 && imc<24.9) {
-        	out.println("<p>Estas en un estatus saludable </p>");	
-        }
-        else if(imc>25 && imc<29.9) {
-        	out.println("<p>Estas en un estatus de sobrepeso </p>");	
-        }
-        else if(imc>30) {
-        	out.println("<p>Estas en un estatus de obesidad </p>");	
-        }
-        out.println("</body></html>");
-    }
+        
 
 	}
+}
 
 
