@@ -12,14 +12,14 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class productos
  */
-@WebServlet("/Registro de productos")
-public class productos extends HttpServlet {
+@WebServlet("/Registro de clientes")
+public class clientes extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public productos() {
+    public clientes() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -32,16 +32,13 @@ public class productos extends HttpServlet {
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 		 response.setContentType("text/html");
 	        PrintWriter out = response.getWriter();
-	        out.println("<html><head><title>Registro de productos</title></head>");
-	        out.println("<center><body><h1>Registro de productos</h1></center>");
+	        out.println("<html><head><title>Registro de clientes</title></head>");
+	        out.println("<center><body><h1>Registro de clientes</h1></center>");
 	        out.println("<form method=\"post\">");
-	        out.println("<center>Clave del producto: <input type=\"text\" name=\"clave\"><br></center>");
-	        out.println("<center>Nombre del producto (metros): <input type=\"text\" name=\"nombre\"><br></center>");
-	        out.println("<center>Peso (kilogramos): <input type=\"text\" name=\"peso\"><br></center>");
-	        out.println("<center>Altura (kilogramos): <input type=\"text\" name=\"altura\"><br></center>");
-	        out.println("<center>Cantidad de productos: <input type=\"text\" name=\"cantidad\"><br></center>");
-	        out.println("<center>Precio: <input type=\"text\" name=\"precio\"><br></center>");
-	        out.println("<center>Estatus: <input type=\"text\" name=\"estatus\"><br></center>");
+	        out.println("<center>Clave del clientes: <input type=\"text\" name=\"clave\"><br></center>");
+	        out.println("<center>Nombre del cliente: <input type=\"text\" name=\"nombre\"><br></center>");
+	        out.println("<center>Direccion: <input type=\"text\" name=\"direccion\"><br></center>");
+	        out.println("<center>Telefono: <input type=\"text\" name=\"telefono\"><br></center>");
 	        out.println("<center><input type=\"submit\" value=\"Registrar\"></center>");
 	        out.println("</form>");
 	        out.println("</body></html>");
@@ -54,19 +51,14 @@ public class productos extends HttpServlet {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 		String Nombre = request.getParameter("nombre");
-		double Peso = Double.parseDouble(request.getParameter("peso"));
-		double Altura = Double.parseDouble(request.getParameter("altura"));
-		double cantidad = Double.parseDouble(request.getParameter("cantidad"));
-		int cantidadInt = (int) Math.round(cantidad);
-		double Precio = Double.parseDouble(request.getParameter("precio"));
-		String Estatus = request.getParameter("estatus");
+		String Direccion = request.getParameter("direccion");
+		double Telefono = Double.parseDouble(request.getParameter("telefono"));
+		int TelefonoInt = (int) Math.round(Telefono);
 		
-       
-
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
-        out.println("<html><head><title>Producto</title></head>");
-        out.println("<body><h1>Producto registrado exitosamente</h1>");
+        out.println("<html><head><title>Clientes</title></head>");
+        out.println("<body><h1>Cliente registrado exitosamente</h1>");
         
 
 	}
